@@ -1,0 +1,16 @@
+<section>
+<label for="n1" [class.error]="n1error">First number</label><input
+  type="number" id="n1" [disabled]="!!sub" [(ngModel)]="n1" #i1>
+<label for="n2" [class.error]="n2error">Second number</label><input
+  type="number" id="n2" [disabled]="!!sub" [(ngModel)]="n2" #i2>
+</section>
+<article>
+<label for="ans">Result</label><input id="ans" disabled [value]="ans">
+</article>
+<nav>
+<button (click)="add()" [disabled]="!!sub">&#10133;&#65039;</button>
+<button (click)="minus()" [disabled]="!!sub">&#10134;&#65039;</button>
+<button (click)="mul()" [disabled]="!!sub">&#10006;&#65039;</button>
+<button (click)="div()" [disabled]="!!sub">&#10135;&#65039;</button>
+</nav>
+<button (click)="logout()" [disabled]="!!sub">Log Out</button>

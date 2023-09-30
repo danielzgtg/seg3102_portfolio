@@ -1,0 +1,7 @@
+<link rel="stylesheet" href="authors.component.scss"><h1>Search our Author Directory</h1>
+<label><span>Author Id</span><input
+  type="number" [value]="initial" #search (input)="this.instantSearch(search.value)"
+  (keyup.enter)="submitSearch()" (blur)="submitSearch()"
+  size="30" placeholder="11, 21, 31, 32, 41, 51, etc."
+></label>
+<router-outlet></router-outlet>

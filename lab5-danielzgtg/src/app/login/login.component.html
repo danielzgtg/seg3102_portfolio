@@ -1,0 +1,17 @@
+<ng-container *ngIf="!loggedIn; else logout">
+<section>
+<label for="email" [class.error]="error">Email</label><input
+id="email" [disabled]="!!sub" [(ngModel)]="email">
+<label for="password" [class.error]="error">Password</label><input
+type="password" id="password" [disabled]="!!sub" [(ngModel)]="pass">
+</section>
+<button (click)="logIn()" [disabled]="sub || !email || !pass">Log in</button>
+<button (click)="signUp()" [disabled]="sub || !email || !pass">Sign up</button>
+<button (click)="google()" title="Google" [disabled]="sub || email || pass">&nbsp;</button>
+<button (click)="resetPassword()" [disabled]="sub || pass || !email">Forgot password</button>
+<app-notification></app-notification>
+</ng-container>
+<ng-template #logout>
+<article>Logged in as <span>{{email}}</span></article>
+<button (click)="logOut()" [disabled]="sub">Log out</button>
+</ng-template>

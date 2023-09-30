@@ -1,0 +1,4 @@
+<cdk-virtual-scroll-viewport [itemSize]="66">
+  <app-adapter *cdkVirtualFor="let item of cart.$ | async; trackBy: track"
+               [text]="item.text" (del)="cart.del(item.id)"></app-adapter>
+</cdk-virtual-scroll-viewport>

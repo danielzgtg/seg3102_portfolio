@@ -1,0 +1,15 @@
+@import "../theme";
+
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  @extend %big-blue;
+  display: inline-block;
+  margin: 0;
+}

@@ -1,0 +1,23 @@
+$theme-debug: false;
+$theme-reactive-width: 700px;
+
+%bordered {
+  box-sizing: border-box;
+  border: 1px solid #3465a4;
+}
+
+%bordered-round {
+  @extend %bordered;
+  border-radius: 8px;
+}
+
+@mixin theme-button($hover, $active) {
+  &:hover, &:focus {
+    outline: 5px solid $hover;
+  }
+
+  &:active {
+    background: $active;
+    color: #fff;
+  }
+}

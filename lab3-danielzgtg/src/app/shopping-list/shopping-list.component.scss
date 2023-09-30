@@ -1,0 +1,11 @@
+@import "../theme";
+
+:host {
+  @extend %bordered;
+  display: block;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 200px;
+  overflow-y: scroll;
+}

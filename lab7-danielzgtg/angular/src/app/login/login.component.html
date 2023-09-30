@@ -1,0 +1,9 @@
+<div *ngIf="!loggedIn; else logout">
+<button (click)="logIn(true)">Log in with correct credentials</button>
+<button (click)="logIn(false)">Log in with wrong password</button>
+<p [hidden]="!error">Invalid Login</p>
+</div>
+<ng-template #logout>
+Logged in as <span>admin</span>
+<button (click)="logOut()">Log out</button>
+</ng-template>

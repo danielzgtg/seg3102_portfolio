@@ -1,0 +1,9 @@
+<form (ngSubmit)="login()">
+<section>
+<label for="username" [class.error]="failed">Username</label><input
+  id="username" name="username" [disabled]="!!sub" [(ngModel)]="username">
+<label for="password" [class.error]="failed">Password</label><input
+  type="password" name="password" id="password" [disabled]="!!sub" [(ngModel)]="password">
+</section>
+<button [disabled]="!!sub">Log In</button>
+</form>

@@ -1,0 +1,5 @@
+<p *ngIf="initialValue === undefined">Loading...</p>
+<p *ngIf="initialValue?.friendId">Editing {{initialValue?.friendId}}</p>
+<button *ngIf="initialValue" type="button" (click)="delete()">Delete</button>
+<app-friend-editor *ngIf="initialValue" [initialValue]="initialValue" (onSubmit)="submit($event)"></app-friend-editor>
+

@@ -1,0 +1,6 @@
+<h1>TheFriendsBook</h1>
+<nav>
+<a [routerLink]="['/profile']">Profile</a>
+<a [routerLink]="['/friends']">Friends</a>
+<a [routerLink]="['/login']">{{( this.login.$ | async ) ? "Logout" : "Login"}}</a>
+</nav>

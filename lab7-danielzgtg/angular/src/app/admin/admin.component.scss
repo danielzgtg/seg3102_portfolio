@@ -1,0 +1,36 @@
+form {
+  & > label, & > div, & > button, & > input[type="submit"] {
+    display: block;
+  }
+}
+
+label > span:first-child::after {
+  content: ": ";
+}
+
+label ~ span {
+  margin-left: 10px;
+}
+
+p, input ~ span {
+  margin: 0;
+}
+
+p + p, input ~ span {
+  color: #f00;
+}
+
+input {
+  margin-right: 20px;
+}
+
+button {
+  display: inline-block;
+}
+
+input[type="submit"] {
+  margin-top: 20px;
+  &.busy {
+    cursor: wait;
+  }
+}

@@ -1,0 +1,8 @@
+label {
+  display: block;
+}
+
+label > span {
+  margin-left: 10px;
+  color: #f00;
+}

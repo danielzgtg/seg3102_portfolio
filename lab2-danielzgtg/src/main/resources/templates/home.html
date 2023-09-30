@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lab2 Calculator Exercise</title>
+<base th:href="@{/}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body><form th:action="@{/calculate}">
+<section>
+<label for="n1" th:class="${aError} ? error : ''">First number</label><input
+        type="number" id="n1" th:value="${a}" name="a" th:autofocus="${aError}">
+<label for="n2" th:class="${bError} ? error : ''">Second number</label><input
+        type="number" id="n2" th:value="${b}" name="b" th:autofocus="${bError}">
+</section>
+<article>
+<label for="ans">Result</label><input id="ans" disabled th:value="${r}">
+</article>
+<nav>
+<button name="op" value="ADD">+</button>
+<button name="op" value="SUB">-</button>
+<button name="op" value="MUL">*</button>
+<button name="op" value="DIV">/</button>
+</nav>
+</form></body>
+</html>

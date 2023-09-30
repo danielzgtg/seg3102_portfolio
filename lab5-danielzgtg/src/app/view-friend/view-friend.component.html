@@ -1,0 +1,3 @@
+<p *ngIf="initialValue === undefined">Loading...</p>
+<!--<p *ngIf="initialValue?.uid">Editing {{initialValue?.uid}}</p>-->
+<app-friend-editor *ngIf="initialValue" [initialValue]="initialValue" [email]="initialValue.email" [disabled]="true"></app-friend-editor>

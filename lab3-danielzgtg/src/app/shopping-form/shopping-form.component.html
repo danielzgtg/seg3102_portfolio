@@ -1,0 +1,2 @@
+<input type="text" placeholder="Item for adding to cart" [class.error]="error" (keyup.enter)="add()" [(ngModel)]="text" #field>
+<button (click)="add()">Add</button>

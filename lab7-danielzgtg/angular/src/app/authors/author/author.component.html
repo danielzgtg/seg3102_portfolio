@@ -1,0 +1,9 @@
+<h1 *ngIf="author === undefined">Loading...</h1>
+<h1 *ngIf="author === null">Sorry we can't find the requested author</h1>
+<div *ngIf="author">
+  <h1>Here are the details of Author {{author.id}}</h1>
+  <table>
+    <tr><td><span>First Name</span></td><td>{{author.firstName}}</td></tr>
+    <tr><td><span>Last Name</span></td><td>{{author.lastName}}</td></tr>
+  </table>
+</div>

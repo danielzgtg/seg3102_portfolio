@@ -1,0 +1,31 @@
+<form [formGroup]="book" (ngSubmit)="submit()">
+<label><span>ISBN</span><input formControlName="isbn"></label>
+<label><span>Category</span><input formControlName="category"></label>
+<label><span>Title</span><input formControlName="title"><span
+  [hidden]="!book.controls['title'].errors?.['required'] || !book.controls['title'].touched"
+>New books must have a title.</span></label>
+<label><span>Cost</span><input formControlName="cost"><span
+  [hidden]="!book.controls['cost'].errors?.['required'] || !book.controls['cost'].touched"
+>Please price this book.</span><span
+  [hidden]="!book.controls['cost'].errors?.['pattern'] || !book.controls['cost'].touched"
+>We didn't understand this dollar value.</span></label>
+<label><span>Year</span><input formControlName="year"><span
+  [hidden]="!book.controls['year'].errors?.['required'] || !book.controls['year'].touched"
+>Please enter a year.</span><span
+  [hidden]="!book.controls['year'].errors?.['pattern'] || !book.controls['year'].touched"
+>We couldn't find this year.</span></label>
+<label>Description: <textarea formControlName="description"></textarea></label>
+<ng-container formArrayName="authors">
+<div *ngFor="let _ of authors.controls; let i = index">
+<ng-container [formGroupName]="i">
+<label><span>First Name</span><input formControlName="firstName" size="10"></label>
+<label><span>Last Name</span><input formControlName="lastName" size="10"></label>
+<button type="button" (click)="removeAuthor(i)">Remove</button>
+</ng-container>
+</div>
+</ng-container>
+<button type="button" (click)="addAuthor()">Add another Author</button>
+<input type="submit" value="Submit Book" [class.busy]="busy" [disabled]="book.invalid || busy">
+<p [hidden]="!success">The book was added with id {{success}}</p>
+  <p [hidden]="success !== null">Unable to add the book</p>
+</form>

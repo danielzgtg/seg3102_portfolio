@@ -1,0 +1,10 @@
+@import "theme";
+
+:host {
+  @extend %blue-border;
+
+  display: block;
+  padding: 35px 25px;
+  width: min(40ch, 100vw);
+  box-sizing: border-box;
+}

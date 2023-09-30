@@ -1,0 +1,33 @@
+type Query {
+    friends: [Friend]
+    friendsById(friendId: ID!): Friend
+    # Unlike Book, is no unique attribute other than friendId
+}
+
+type Friend {
+    friendId: ID!
+    firstName: String!
+    lastName: String!
+    # Blank is fine, null is not.
+    phone: String!
+    email: String!
+}
+
+type Mutation {
+    newFriend(
+        firstName: String!
+        lastName: String!
+        phone: String!
+        email: String!
+    ): Friend!
+    deleteFriend(friendId: ID!): Boolean
+    updateFriend(
+        friendId: ID!
+        firstName: String
+        lastName: String
+        phone: String
+        email: String
+    ): Friend!
+}
+
+# No extend type as there is only one class in the domain

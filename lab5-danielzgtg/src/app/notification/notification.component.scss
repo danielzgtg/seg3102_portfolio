@@ -1,0 +1,19 @@
+@keyframes alert {
+  from {
+    background: #ff0;
+  }
+
+  to {
+    background: #ff00;
+  }
+}
+
+p {
+  &.error {
+    color: #f00;
+  }
+
+  &:not(.hide) {
+    animation: alert 1s;
+  }
+}

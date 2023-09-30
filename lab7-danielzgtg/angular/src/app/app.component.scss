@@ -1,0 +1,16 @@
+@import "theme";
+
+:host {
+  @extend %blue-frame;
+  display: block;
+  padding: 9px 9px 13px 9px;
+  > * {
+    @extend %blue-frame;
+    width: 590px;
+    display: block;
+  }
+  > main {
+    height: 320px;
+    overflow: scroll;
+  }
+}

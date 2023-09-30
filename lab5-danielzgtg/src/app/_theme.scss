@@ -1,0 +1,43 @@
+%big-blue {
+  font-size: 24pt;
+  color: #00f;
+  text-align: center;
+}
+
+$frame-border-size: 1px;
+
+%blue-frame {
+  border: $frame-border-size solid #3465a4;
+}
+
+$button-font-size: 18pt;
+$button-line-height: 1.4;
+$button-height-padding: 4px;
+$button-height: ($button-height-padding * 2) + ($button-font-size * $button-line-height) + ($frame-border-size * 2);
+$button-color: #729fcf;
+
+%blue-button {
+  @extend %blue-frame;
+
+  font-size: $button-font-size;
+  line-height: $button-line-height;
+  background-color: $button-color;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  padding: $button-height-padding 12px;
+
+  &:not([disabled]) {
+    &:hover, &:active {
+      cursor: pointer;
+    }
+
+    &:hover {
+      background-color: saturate($button-color, 30%);
+    }
+
+    &:active {
+      background-color: darken(saturate($button-color, 50%), 10%);
+    }
+  }
+}

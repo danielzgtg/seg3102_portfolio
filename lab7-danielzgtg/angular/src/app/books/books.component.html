@@ -1,0 +1,7 @@
+<h1>Search our Book Collection</h1>
+<label><span>Book Id</span><input
+  type="number" [value]="initial" #search (input)="this.instantSearch(search.value)"
+  (keyup.enter)="submitSearch()" (blur)="submitSearch()"
+  size="30" placeholder="1001, 1002, 1003, 1004, 1005, etc."
+></label>
+<router-outlet></router-outlet>

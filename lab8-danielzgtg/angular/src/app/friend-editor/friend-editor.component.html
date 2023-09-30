@@ -1,0 +1,24 @@
+<a [routerLink]="['/friends']">View List</a>
+<form [formGroup]="profile" (ngSubmit)="submit()">
+  <label>First Name: <input formControlName="firstName"><span
+    [hidden]="!profile.controls['firstName'].errors?.['required'] || !profile.controls['firstName'].touched"
+  >Your first name, please.</span></label>
+  <label>Last Name: <input formControlName="lastName"><span
+    [hidden]="!profile.controls['lastName'].errors?.['required'] || !profile.controls['lastName'].touched"
+  >Your last name, please.</span></label>
+  <label>Phone Number: <input formControlName="phone"><span
+    [hidden]="!profile.controls['phone'].errors?.['numeric'] || !profile.controls['phone'].touched"
+  >Please enter a numerical phone number without spaces or symbols.</span><span
+    [hidden]="!profile.controls['phone'].errors?.['length'] || !profile.controls['phone'].touched"
+  >Canadian phone numbers are 10 digits.</span><span
+    [hidden]="!profile.controls['phone'].errors?.['first'] || !profile.controls['phone'].touched"
+  >First digit must not call operator.</span><span
+    [hidden]="!profile.controls['phone'].errors?.['fourth'] || !profile.controls['phone'].touched"
+  >There's no telephone exchange with fourth digit zero.</span></label>
+  <label>Email: <input formControlName="email"><span
+    [hidden]="!profile.controls['email'].errors?.['required'] || !profile.controls['email'].touched"
+  >Your email, please.</span><span
+    [hidden]="!profile.controls['email'].errors?.['email'] || !profile.controls['email'].touched"
+  >Please check this is a valid email.</span></label>
+  <input type="submit" value="Add" [disabled]="!profile.valid">
+</form>

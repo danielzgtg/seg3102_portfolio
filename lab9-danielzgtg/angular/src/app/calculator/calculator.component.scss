@@ -1,0 +1,12 @@
+@import "../theme";
+
+article {
+  margin: 50px 0;
+  & > label {
+    padding-right: 5ch;
+  }
+}
+
+nav {
+  margin: 20px 0;
+}

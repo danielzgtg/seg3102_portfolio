@@ -1,0 +1,10 @@
+<app-friend-editor
+  *ngIf="loaded"
+  [initialValue]="initialValue"
+  [email]="email"
+  label="Save"
+  [disabled]="!!sub"
+  (onSubmit)="submit($event)"
+></app-friend-editor>
+<button (click)="delete()" [disabled]="sub">Delete</button>
+<app-notification></app-notification>

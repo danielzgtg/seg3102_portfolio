@@ -1,0 +1,16 @@
+label {
+  display: block;
+
+  & > span:first-child::after {
+    content: ": ";
+  }
+
+  & > input ~ span {
+    margin-left: 10px;
+    color: #f00;
+  }
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+}

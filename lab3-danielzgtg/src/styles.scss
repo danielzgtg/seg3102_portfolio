@@ -1,0 +1,40 @@
+@import "app/theme";
+
+html {
+  height: 100%;
+  font-family: "Arial", sans-serif;
+
+  &, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  @extend %bordered-round;
+  background: #ccc;
+  height: 49px;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+@if $theme-debug {
+  div.cdk-virtual-scroll-content-wrapper > app-adapter {
+    &:nth-child(odd) {
+      background: red;
+    }
+
+    &:nth-child(even) {
+      background: green;
+    }
+  }
+}

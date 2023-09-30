@@ -1,0 +1,25 @@
+:host {
+  display: block;
+}
+
+table {
+  border-collapse:collapse;
+  width: 100%;
+}
+
+th, td {
+  box-sizing: border-box;
+  border: 1px solid #888;
+}
+
+tr {
+  line-height: 25px;
+}
+
+a, button {
+  display: block;
+}
+
+p {
+  color: #0f0;
+}

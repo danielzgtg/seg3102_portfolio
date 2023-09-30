@@ -1,0 +1,28 @@
+%big-blue {
+  font-size: 24pt;
+  color: #00f;
+  text-align: center;
+}
+
+%blue-frame {
+  border: 1px solid #3465a4;
+}
+
+%blue-button {
+  @extend %blue-frame;
+  font-size: 18pt;
+  background-color: #729fcf;
+  color: #000;
+  text-align: center;
+  text-decoration: none;
+  padding: 4px 12px;
+  &:hover, &:active {
+    cursor: pointer;
+  }
+  &:hover {
+    background: #e60000;
+  }
+  &:active {
+    background: #a00;
+  }
+}

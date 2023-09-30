@@ -1,0 +1,31 @@
+@import "../../theme";
+
+:host {
+  display: block;
+  height: 66px; // compromise between 64px and 68 px
+  overflow: hidden;
+}
+
+button {
+  margin: 3px 22px;
+  float: right;
+  @include theme-button(#f00, #c00);
+}
+
+span {
+  @extend %bordered;
+  background: #729ffc;
+  font-size: 18pt;
+  width: 329px;
+  height: 34px;
+  display: inline-block;
+  padding: 4px 8px;
+  margin: 11px 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media (max-width: $theme-reactive-width) {
+    margin-right: 0;
+  }
+}

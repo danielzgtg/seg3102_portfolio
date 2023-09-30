@@ -1,0 +1,44 @@
+:host {
+  display: block;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 400px;
+  overflow-y: scroll;
+}
+
+table {
+  border-collapse:collapse;
+  margin: 0;
+  width: 100%;
+}
+
+th, td {
+  box-sizing: border-box;
+  border: 1px solid #888;
+}
+
+tr {
+  line-height: 25px;
+
+  & > td {
+    cursor: pointer;
+    user-select: none;
+
+    &[colspan] {
+      text-align: center;
+
+      &.loading::after {
+        content: "...";
+      }
+    }
+  }
+}
+
+button {
+  margin: 20px;
+
+  .loading {
+    cursor: wait;
+  }
+}

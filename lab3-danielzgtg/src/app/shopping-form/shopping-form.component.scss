@@ -1,0 +1,35 @@
+@import "../theme";
+
+:host {
+  @extend %bordered;
+  display: block;
+  margin-bottom: 11px;
+  white-space: nowrap;
+}
+
+button {
+  font-size: 22pt;
+  text-transform: uppercase;
+  min-width: 105px;
+  margin: 15px 26px;
+  @include theme-button(#0a0, #080);
+}
+
+input {
+  @extend %bordered-round;
+  font-size: 18pt;
+  text-align: center;
+  min-height: 53px;
+  margin: 11px 34px 15px 22px;
+
+  &.error {
+    border: 1px solid #f00;
+    &:focus-visible {
+      outline: 5px solid #e00;
+    }
+  }
+
+  @media (max-width: $theme-reactive-width) {
+    margin-right: 0;
+  }
+}

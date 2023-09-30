@@ -1,0 +1,17 @@
+@import "theme";
+
+:host {
+  @extend %bordered;
+  display: block;
+  padding: 40px 45px 94px 60px;
+
+  @media (max-width: $theme-reactive-width) {
+    border: none;
+    padding: 0;
+  }
+
+  @if $theme-debug {
+    background: #ff0;
+  }
+}
+

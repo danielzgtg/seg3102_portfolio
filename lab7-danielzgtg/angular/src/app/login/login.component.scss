@@ -1,0 +1,14 @@
+@import "../theme";
+
+p {
+  color: #f00;
+}
+
+span {
+  font-weight: bold;
+}
+
+button {
+  @extend %blue-button;
+  display: block;
+}

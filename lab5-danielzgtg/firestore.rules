@@ -1,0 +1,21 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /profiles/{document} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null &&
+      request.auth.uid == document &&
+request.resource.data.first is string &&
+request.resource.data.first.size() > 0 &&
+request.resource.data.first.size() < 256 &&
+request.resource.data.last is string &&
+request.resource.data.last.size() > 0 &&
+request.resource.data.last.size() < 256 &&
+request.resource.data.phone is string &&
+(request.resource.data.phone.size() == 0 || request.resource.data.phone.size() == 10) &&
+request.resource.data.email == request.auth.token.email &&
+request.resource.data.keys().hasOnly(['first', 'last', 'phone', 'email']);
+      allow delete: if request.auth != null && request.auth.uid == document;
+    }
+  }
+}

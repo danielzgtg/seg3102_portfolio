@@ -1,0 +1,24 @@
+@import "../theme";
+
+:host {
+  padding-top: 12px;
+  margin-bottom: 13px;
+}
+
+h1 {
+  @extend %big-blue;
+  margin: 0;
+}
+
+nav {
+  margin: 0 71px;
+}
+
+a {
+  @extend %blue-button;
+  display: inline-block;
+  margin-bottom: 2px;
+  &:not(:last-child) {
+    margin-right: 19px;
+  }
+}

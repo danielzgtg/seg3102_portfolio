@@ -1,0 +1,15 @@
+<h1 *ngIf="book === undefined">Loading...</h1>
+<h1 *ngIf="book === null">That book does not exist</h1>
+<div *ngIf="book">
+<h1>Here are the details of Book {{book.id}}</h1>
+<table>
+<tr *ngIf="book.isbn"><td><span>ISBN</span></td><td>{{book.isbn}}</td></tr>
+<tr *ngIf="book.category"><td><span>Category</span></td><td>{{book.category}}</td></tr>
+<tr *ngIf="book.title"><td><span>Title</span></td><td>{{book.title}}</td></tr>
+<tr><td><span>Cost</span></td><td>{{book.cost | price}}</td></tr>
+<tr><td><span>Year</span></td><td>{{book.year}}</td></tr>
+<tr *ngIf="book.description"><td><span>Description</span></td><td>{{book.description}}</td></tr>
+<tr *ngIf="book.authors?.length"><td><span>Authors</span></td><td>{{book.authors | authornames}}</td></tr>
+</table>
+<button *ngIf="loggedIn" (click)="remove()">Remove</button>
+</div>

@@ -1,0 +1,23 @@
+<form [formGroup]="profile" (ngSubmit)="submit()">
+<label><span>First Name</span><input formControlName="first"><span
+  [hidden]="!profile.controls['first'].errors?.['required'] || !profile.controls['first'].touched"
+>Your first name, please.</span><span
+  [hidden]="!profile.controls['first'].errors?.['maxlength'] || !profile.controls['first'].touched"
+>Please enter just the first 255 letters of your first name.</span></label>
+<label><span>Last Name</span><input formControlName="last"><span
+  [hidden]="!profile.controls['last'].errors?.['required'] || !profile.controls['last'].touched"
+>Your last name, please.</span><span
+  [hidden]="!profile.controls['last'].errors?.['maxlength'] || !profile.controls['last'].touched"
+>Please enter just the first 255 letters of your last name.</span></label>
+<label><span>Phone Number</span><input formControlName="phone"><span
+  [hidden]="!profile.controls['phone'].errors?.['numeric'] || !profile.controls['phone'].touched"
+>Please enter a numerical phone number without spaces or symbols.</span><span
+  [hidden]="!profile.controls['phone'].errors?.['length'] || !profile.controls['phone'].touched"
+>Canadian phone numbers are 10 digits.</span><span
+  [hidden]="!profile.controls['phone'].errors?.['first'] || !profile.controls['phone'].touched"
+>First digit must not call operator.</span><span
+  [hidden]="!profile.controls['phone'].errors?.['fourth'] || !profile.controls['phone'].touched"
+>There's no telephone exchange with fourth digit zero.</span></label>
+<label><span>Email</span><input [value]="email" [disabled]="true"></label>
+<input type="submit" [value]="label" [hidden]="!label" [disabled]="!profile.valid">
+</form>

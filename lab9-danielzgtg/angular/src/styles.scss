@@ -1,0 +1,79 @@
+@import "app/theme";
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  @extend %big-font;
+
+  height: 100%;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+body {
+  min-height: 100%;
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  @extend %blue-border;
+  @extend %big-font;
+
+  background: #ccc;
+  padding: 5px 20px;
+  border-radius: 7px;
+  margin-right: 75px;
+
+  &:not([disabled]) {
+    &:hover {
+      background: #aaa;
+    }
+
+    &:active {
+      background: #888;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+}
+
+section {
+  display: grid;
+  grid-template-columns: max-content auto;
+  row-gap: 20px;
+}
+
+input {
+  @extend %blue-border;
+
+  width: 30ch;
+  height: 4ch;
+  border-radius: 5px;
+}
+
+label {
+  padding-right: 1ch;
+
+  &::after {
+    content: ":";
+  }
+
+  &.error, &.error + input {
+    color: $error-color;
+  }
+}
+
+section > input, button {
+  &[disabled] {
+    cursor: wait;
+  }
+}

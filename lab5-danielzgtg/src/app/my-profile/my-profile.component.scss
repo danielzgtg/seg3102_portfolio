@@ -1,0 +1,7 @@
+@import "../theme";
+
+button {
+  @extend %blue-button;
+
+  margin-top: 20px;
+}

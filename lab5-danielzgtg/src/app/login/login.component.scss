@@ -1,0 +1,38 @@
+@import "../theme";
+
+article {
+  @extend %big-blue;
+
+  & + button {
+    display: block;
+    margin-inline: auto;
+  }
+}
+
+span {
+  font-weight: bold;
+}
+
+button {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+button[title="Google"] {
+  width: $button-height;
+  height: $button-height;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("../../assets/google.ico");
+}
+
+label::after {
+  content: ": ";
+}
+
+section {
+  display: grid;
+  grid-template-columns: max-content auto;
+  row-gap: 20px;
+}
